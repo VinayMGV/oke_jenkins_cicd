@@ -2,7 +2,7 @@ pipeline{
 	agent any
 	stages{
 		stage('Build docker image'){
-			step {
+			steps {
 				script {
 					def scmVars = checkout([
 						$class: 'GitSCM',
