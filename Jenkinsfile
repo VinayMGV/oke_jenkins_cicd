@@ -12,7 +12,7 @@ pipeline{
 						]],
 						branches: [[name: '*/master']]
 					])
-				sh "sudo docker build -f ./app_flask/Dockerfile -t app_flask:${scmVars.GIT_COMMIT} ."
+				sh "sudo docker build -f Dockerfile -t app_flask:${scmVars.GIT_COMMIT} ."
 				}
 			}
 		}
