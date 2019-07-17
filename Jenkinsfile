@@ -16,7 +16,7 @@ pipeline{
 				}
 			}
 		}
-	stage('Push image to OCIR') { 
+		stage('Push image to OCIR') { 
             steps {
                 script {
                     def scmVars = checkout([
@@ -33,7 +33,6 @@ pipeline{
                 env.GIT_COMMIT = scmVars.GIT_COMMIT
                 sh "export GIT_COMMIT=${env.GIT_COMMIT}"
                 }
-               }
             }
         }
 	}
