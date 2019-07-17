@@ -16,7 +16,6 @@ pipeline{
 				}
 			}
 		}
-	}
 	stage('Push image to OCIR') { 
             steps {
                 script {
@@ -37,4 +36,6 @@ pipeline{
                }
             }
         }
+	}
+	
 }
