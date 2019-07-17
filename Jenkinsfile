@@ -38,7 +38,7 @@ pipeline{
 		stage('Deploy to Kubernet'){
 			steps {
 				script {
-					sh "sudo kubectl create -f kubernet.yml
+					sh "sudo kubectl create -f kubernet.yml"
 				}
 			}
 		}
