@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: helloworld-deploy
+  name: appflask-deploy
 spec:
   selector:
     matchLabels:
-      app: helloworld
+      app: appflask
   replicas: 1
   template:
     metadata:
       labels:
-        app: helloworld
+        app: appflask
     spec:
       containers:
-      - name: helloworld
+      - name: appflask
     # enter the path to your image, be sure to include the correct region prefix
-        image: ${REGION}.ocir.io/${TENANCY_NAME}/${REPO_NAME}/app_flask:${GIT_COMMIT}
+        image: ${REPO_PATH}/app_flask:${GIT_COMMIT}
         ports:
         - containerPort: 5000
       imagePullSecrets:
