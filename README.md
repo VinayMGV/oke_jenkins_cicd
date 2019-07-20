@@ -90,6 +90,7 @@ CMD ["flask", "run", "--host=0.0.0.0"]
 	  `${REGISTRY_TOKEN}` | Auth token for the OCI User and the user should have the permission to manage OCIR.
 	  `${REPO_PATH}`| \<REGION\>.ocir.io/\<TENANCY_NAME\>
 4. Click on the `Pipeline` tab and select as below then save.
+
     Parameter| Value
 	  ---------|------
 	  Definition | Pipeline Script from SCM
@@ -179,6 +180,7 @@ spec:
 3. Click on `Build Triggers` tab and enter name of the ***test_ci_pipe*** in `Projects to watch` by checking the `Build after other projects are built`.
 4. Then check the box `Trigger only if build is stable`. (This option will Trigger the CD Pipeline when the CI Pipeline Succeed.)
 5. Click on the `Pipeline` tab and select as below then save.
+
     Parameter| Value
 	  ---------|------
 	  Definition | Pipeline Script from SCM
