@@ -32,6 +32,7 @@ pipeline{
 				sh "sudo docker push ${params.REPO_PATH}/app_flask:${scmVars.GIT_COMMIT}"
 				env.GIT_COMMIT = scmVars.GIT_COMMIT
 				sh "export GIT_COMMIT=${env.GIT_COMMIT}"
+				sh "export REPO_PATH=${params.REPO_PATH}"
 				}
 			}
 		}
