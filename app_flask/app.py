@@ -3,13 +3,14 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def hello():
-	json_out = {
-		"name":"app_flask",
-		"version": "bleeding_edge"
-	}
-	return jsonify(json_out)
+    json_out = {
+        "name": "app_flask",
+        "version": "bleeding_edge"
+        }
+    return jsonify(json_out)
 
 
 if __name__ == "__main__":

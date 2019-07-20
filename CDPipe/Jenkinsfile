@@ -1,0 +1,12 @@
+pipeline {
+  agent any
+  stages {
+    stage('Deploying helloworld FLASK_APP') {
+      steps {
+        sh 'sudo bash deploy.sh'
+      }
+
+      }
+    }
+  }
+}
