@@ -187,7 +187,7 @@ spec:
 	  SCM | Git (If private repo create Credentials)
 	  Script Path | CDPipe/Jenkinsfile
 
-#### Finally build the pipeline 'test_ci_pipe'.
+#### Finally build the pipeline `test_ci_pipe`.
 
 ## Some Referral Links:
 
