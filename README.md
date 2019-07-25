@@ -1,5 +1,5 @@
 ### Deploying Docker Image to kubernetes container(OKE) using Jenkins CI/CD
-*First fork the code from here [Fork](https://github.com/GuGu910/test)*
+*First fork this repository [(Fork)](https://github.com/GuGu910/test)*
 ##### CI Pipeline:
 1. Checkout GitHub code
 2. Building the Docker Image
@@ -57,9 +57,9 @@ In the place of __`${REGION}`__ replace with OCI Region or else create environme
 1. Follow __`Managin Jenkis -> Configure System -> Under Globel properties section`__.
 2. Select the checkbox __`Environment varibales`__ and click on __`Add`__ button then add below details.
 
-Name | Vaule
------|------
-`${REGION}` | (e.g) ***eu-frankfurt-1***
+	  Name | Vaule
+	  -----|------
+	  `${REGION}` | (e.g) ***eu-frankfurt-1***
 
 --------------------------------------------------------------------------------
 Dockerfile
