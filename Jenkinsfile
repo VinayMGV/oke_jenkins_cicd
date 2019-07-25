@@ -31,7 +31,7 @@ pipeline{
 					sh "sudo docker tag app_flask:${scmVars.GIT_COMMIT} ${params.REPO_PATH}/app_flask:${scmVars.GIT_COMMIT}"
 					sh "sudo docker push ${params.REPO_PATH}/app_flask:${scmVars.GIT_COMMIT}"
 					writeFile file: '/tmp/git_commit', text: "${scmVars.GIT_COMMIT}"
-					writeFile file: '/tmp/repo', text: "${OCIR_PATH}"  // ${OCIR_PATH} == <REGION>.ocir.io/<TENANCY>/<REPO_NAME> 
+					writeFile file: '/tmp/repo', text: "${params.REPO_PATH}"
 				}
 			}
 		}
