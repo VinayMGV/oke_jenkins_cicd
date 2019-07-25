@@ -1,6 +1,9 @@
 ### Deploying Docker Image to kubernetes container(OKE) using Jenkins CI/CD
 *First fork this repository [(Fork)](https://github.com/GuGu910/test)*
+
 ##### CI Pipeline:
+
+![Image of CI Pipeline](./images/CI.PNG)
 1. Checkout GitHub code
 2. Building the Docker Image
 3. Push the image to Oracle Cloud Infra Registry(OCIR)
@@ -106,6 +109,8 @@ CMD ["flask", "run", "--host=0.0.0.0"]
 	  Script Path | Jenkinsfile
 
 #### CD Pipeline
+
+![Image of CD Pipeline](./images/CD.PNG)
 1. Pull the image from OCIR
 2. deploy the docker container to Kubernetes
 
