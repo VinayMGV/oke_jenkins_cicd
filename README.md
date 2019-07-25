@@ -53,7 +53,7 @@ Checkout from GitHub and building docker Image for the __`app_flask`__. In the p
 	}
 }
 ```
-Pushing the Docker image to OCIR and writing the __`${scmVars.GIT_COMMIT}`__ and __`${params.REPO_PATH}`__ into a diff files to access on deployment.
+Pushing the Docker image to OCIR and write the __`${scmVars.GIT_COMMIT}`__ and __`${params.REPO_PATH}`__ into different files to access on deployment.
 In the place of __`${REGION}`__ replace with OCI Region or else create environment variable in jenkins.
 
 ##### Creating Environment variables in Jenkins:
@@ -93,7 +93,7 @@ CMD ["flask", "run", "--host=0.0.0.0"]
 1. Click on the __`New Item`__ from the Jenkins dashboard.
 2. Enter the item name as ***test_ci_pipe*** in the Text field and select the __`Pipeline`__ then Click on __`OK`__.
 3. Add the below mentioned parameters in the __`General`__ tab.
-	* Click the check box ***This project is parameterized*** and add the ***String Parameter*** from the dropdown __`Add parameter`__
+	* Click the check box __`This project is parameterized`__ and add the __`String Parameter`__ from the dropdown __`Add parameter`__
 
     Parameter | Value
 	  -----------|--------
