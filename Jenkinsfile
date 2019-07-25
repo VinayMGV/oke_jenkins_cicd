@@ -12,7 +12,7 @@ pipeline{
 						]],
 						branches: [[name: '*/master']]
 					])
-				sh "sudo docker build -f Dockerfile -t app_flask:${scmVars.GIT_COMMIT} ./app_flask"
+					sh "sudo docker build -f Dockerfile -t app_flask:${scmVars.GIT_COMMIT} ./app_flask"
 				}
 			}
 		}
@@ -27,12 +27,11 @@ pipeline{
 						]],
 						branches: [ [name: '*/master'] ]
 					])
-				sh "sudo docker login -u ${params.REGISTRY_USERNAME} -p ${params.REGISTRY_TOKEN} eu-frankfurt-1.ocir.io"
-				sh "sudo docker tag app_flask:${scmVars.GIT_COMMIT} ${params.REPO_PATH}/app_flask:${scmVars.GIT_COMMIT}"
-				sh "sudo docker push ${params.REPO_PATH}/app_flask:${scmVars.GIT_COMMIT}"
-				env.GIT_COMMIT = scmVars.GIT_COMMIT
-				sh "export GIT_COMMIT=${env.GIT_COMMIT}"
-				sh "export REPO_PATH=${params.REPO_PATH}"
+					sh "sudo docker login -u ${params.REGISTRY_USERNAME} -p ${params.REGISTRY_TOKEN} ${REGION}.ocir.io"
+					sh "sudo docker tag app_flask:${scmVars.GIT_COMMIT} ${params.REPO_PATH}/app_flask:${scmVars.GIT_COMMIT}"
+					sh "sudo docker push ${params.REPO_PATH}/app_flask:${scmVars.GIT_COMMIT}"
+					writeFile file: '/tmp/git_commit', text: "${scmVars.GIT_COMMIT}"
+					writeFile file: '/tmp/repo', text: "${OCIR_PATH}"  // ${OCIR_PATH} == <REGION>.ocir.io/<TENANCY>/<REPO_NAME> 
 				}
 			}
 		}
