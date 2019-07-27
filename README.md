@@ -57,12 +57,12 @@ Pushing the Docker image to OCIR and write the __`${scmVars.GIT_COMMIT}`__ and _
 In the place of __`${REGION}`__ replace with OCI Region or else create environment variable in jenkins.
 
 ##### Creating Environment variables in Jenkins:
-1. Follow __`Managin Jenkis -> Configure System -> Under Globel properties section`__.
-2. Select the checkbox __`Environment varibales`__ and click on __`Add`__ button then add below details.
+1. Follow __`Managing Jenkins -> Configure System -> Under Global properties section`__.
+2. Select the checkbox __`Environment variables`__ and click on __`Add`__ button then add below details.
 
 	  Name | Vaule
 	  -----|------
-	  `${REGION}` | (e.g) ***eu-frankfurt-1***
+	  `REGION` | (e.g) ***eu-frankfurt-1***
 
 --------------------------------------------------------------------------------
 Dockerfile
@@ -97,9 +97,9 @@ CMD ["flask", "run", "--host=0.0.0.0"]
 
     Parameter | Value
 	  -----------|--------
-	  `${REGISTRY_USERNAME}` | \<TENANCY_NAME\>/\<USERNAME>
-	  `${REGISTRY_TOKEN}` | Auth token for the OCI User and the user should have the permission to manage OCIR. How to get token [here](https://www.oracle.com/webfolder/technetwork/tutorials/obe/oci/registry/index.html)
-	  `${REPO_PATH}`| \<REGION\>.ocir.io/\<TENANCY_NAME\>
+	  `REGISTRY_USERNAME` | \<TENANCY_NAME\>/\<USERNAME>
+	  `REGISTRY_TOKEN` | Auth token for the OCI User and the user should have the permission to manage OCIR. How to get token [here](https://www.oracle.com/webfolder/technetwork/tutorials/obe/oci/registry/index.html)
+	  `REPO_PATH`| \<REGION\>.ocir.io/\<TENANCY_NAME\>
 4. Click on the __`Pipeline`__ tab and select as below then save.
 
     Parameter| Value
@@ -217,5 +217,5 @@ spec:
 
 Content | Link
 --------|-----
-Pushing Image to OCIR | https://www.oracle.com/webfolder/technetwork/tutorials/obe/oci/registry/index.html
-Pulling Image from OCIR when Deploying on OKE |https://www.oracle.com/webfolder/technetwork/tutorials/obe/oci/oke-and-registry/index.html
+Pushing Image to OCIR | [Click here](https://www.oracle.com/webfolder/technetwork/tutorials/obe/oci/registry/index.html)
+Pulling Image from OCIR when Deploying on OKE |[Click here](https://www.oracle.com/webfolder/technetwork/tutorials/obe/oci/oke-and-registry/index.html)
