@@ -8,7 +8,8 @@ app = Flask(__name__)
 def hello():
     json_out = {
         "name": "app_flask",
-        "version": "bleeding_edge"
+        "version": "bleeding_edge",
+        "release": "2.0"
         }
     return jsonify(json_out)
 
